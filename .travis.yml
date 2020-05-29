@@ -1,7 +1,11 @@
 services:
   - docker
 
-script: ./travis/build_docker.sh
+env:
+  - DOCKER_ORG='opensciencegrid' DOCKER_REPOS='xcache stash-cache stash-origin atlas-xcache cms-xcache'
+
+script: 
+  - ./travis/travis-wrapper.sh
 
 branches:
   only:
